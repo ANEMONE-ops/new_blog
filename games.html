@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="js-loading">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="休闲小游戏 - 猜数字、打字测速、反应速度测试">
+<title>休闲小游戏 · YangZhe</title>
+<style>html.js-loading{visibility:hidden}html.js-ready{visibility:visible}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=JetBrains+Mono:wght@400..700&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/games.css">
+</head>
+<body>
+
+<canvas class="particles-canvas"></canvas>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <span class="nav__logo-dot"></span>
+      YZ
+    </a>
+    <button class="nav__toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links">
+      <li><a href="index.html" class="nav__link">首页</a></li>
+      <li><a href="projects.html" class="nav__link">核心项目</a></li>
+      <li><a href="games.html" class="nav__link nav__link--active">休闲小游戏</a></li>
+      <li><a href="chat.html" class="nav__link">AI 问答</a></li>
+      <li><a href="about.html" class="nav__link">关于我</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<section class="page-header">
+  <div class="section__inner reveal">
+    <span class="section__label">弱智小游戏库</span>
+    <h1>要玩就给我<span class="text-gradient">玩好的呀</span></h1>
+    <p class="section__subtitle" style="margin-inline:auto;">卷不动就放松一下</p>
+  </div>
+</section>
+
+<!-- Game Tabs -->
+<section class="section games-tabs" style="padding-top:1rem;">
+  <div class="section__inner">
+    <div class="games-tabs__nav reveal">
+      <button class="games-tabs__btn games-tabs__btn--active" data-game="guess">猜数字</button>
+      <button class="games-tabs__btn" data-game="typing">打字测速</button>
+      <button class="games-tabs__btn" data-game="reaction">反应测试</button>
+    </div>
+
+    <!-- Game 1: Number Guessing -->
+    <div class="game-panel game-panel--active reveal" id="game-guess">
+      <div class="game-panel__inner">
+        <div class="game-panel__header">
+          <div class="game-panel__icon">🎯</div>
+          <h2>猜数字</h2>
+          <p>我在 1 到 100 之间想了一个数字，试试看几次能猜中？</p>
+        </div>
+        <div class="game-panel__body">
+          <div class="game-panel__stats">
+            <div class="game-stat">
+              <span class="game-stat__num" id="guess-rounds">0</span>
+              <span class="game-stat__label">已猜次数</span>
+            </div>
+            <div class="game-stat">
+              <span class="game-stat__num" id="guess-best">--</span>
+              <span class="game-stat__label">最佳纪录</span>
+            </div>
+            <div class="game-stat">
+              <span class="game-stat__num" id="guess-hint">🟢</span>
+              <span class="game-stat__label">提示</span>
+            </div>
+          </div>
+          <div class="game-panel__input-row">
+            <input type="number" id="guess-input" class="game-input" placeholder="输入 1-100 的数字..." min="1" max="100">
+            <button id="guess-btn" class="btn btn--primary">猜！</button>
+          </div>
+          <div class="game-panel__result" id="guess-result"></div>
+          <div class="game-panel__history" id="guess-history"></div>
+          <button id="guess-reset" class="btn btn--outline" style="margin-top:1rem;">重新开始</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Game 2: Typing Speed -->
+    <div class="game-panel reveal" id="game-typing">
+      <div class="game-panel__inner">
+        <div class="game-panel__header">
+          <div class="game-panel__icon">⌨️</div>
+          <h2>打字速度测试</h2>
+          <p>展示一段文字，计时开始后输入，看你的打字速度和准确率</p>
+        </div>
+        <div class="game-panel__body">
+          <div class="game-panel__stats">
+            <div class="game-stat">
+              <span class="game-stat__num" id="typing-wpm">0</span>
+              <span class="game-stat__label">WPM (字/分)</span>
+            </div>
+            <div class="game-stat">
+              <span class="game-stat__num" id="typing-accuracy">100</span>
+              <span class="game-stat__label">准确率 %</span>
+            </div>
+            <div class="game-stat">
+              <span class="game-stat__num" id="typing-time">0</span>
+              <span class="game-stat__label">已用秒数</span>
+            </div>
+          </div>
+          <div class="typing-display" id="typing-display"></div>
+          <textarea id="typing-input" class="game-input game-input--textarea" placeholder="在这里输入..." disabled></textarea>
+          <div class="game-panel__actions">
+            <button id="typing-start" class="btn btn--primary">开始测试</button>
+            <button id="typing-reset" class="btn btn--outline">换一题</button>
+          </div>
+          <div class="game-panel__result" id="typing-result"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Game 3: Reaction Test -->
+    <div class="game-panel reveal" id="game-reaction">
+      <div class="game-panel__inner">
+        <div class="game-panel__header">
+          <div class="game-panel__icon">⚡</div>
+          <h2>反应速度测试</h2>
+          <p>当屏幕变绿时立刻点击！测试你的极限反应速度</p>
+        </div>
+        <div class="game-panel__body">
+          <div class="game-panel__stats">
+            <div class="game-stat">
+              <span class="game-stat__num" id="reaction-last">--</span>
+              <span class="game-stat__label">最近一次 (ms)</span>
+            </div>
+            <div class="game-stat">
+              <span class="game-stat__num" id="reaction-best">--</span>
+              <span class="game-stat__label">最佳纪录 (ms)</span>
+            </div>
+            <div class="game-stat">
+              <span class="game-stat__num" id="reaction-avg">--</span>
+              <span class="game-stat__label">平均 (ms)</span>
+            </div>
+          </div>
+          <div class="reaction-zone" id="reaction-zone">
+            <div class="reaction-zone__inner">
+              <span id="reaction-text">点击这里开始</span>
+              <span id="reaction-timer" class="reaction-zone__timer"></span>
+            </div>
+          </div>
+          <div class="game-panel__result" id="reaction-result"></div>
+          <button id="reaction-reset" class="btn btn--outline" style="margin-top:1rem;">重置纪录</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <p class="footer__text">以代码践行热爱，以开源传递成长 — YangZhe (YZ)</p>
+    <div class="footer__links">
+      <a href="index.html" class="footer__link">首页</a>
+      <a href="projects.html" class="footer__link">核心项目</a>
+      <a href="games.html" class="footer__link">小游戏</a>
+      <a href="chat.html" class="footer__link">AI 问答</a>
+      <a href="about.html" class="footer__link">关于我</a>
+    </div>
+    <p class="footer__text" style="margin-top:1rem;font-size:0.78rem;">© 2026 YangZhe (YZ) · <a href="https://github.com/ANEMONE-ops" target="_blank">github.com/ANEMONE-ops</a></p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/games.js"></script>
+</body>
+</html>
+

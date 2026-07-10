@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="js-loading">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI 智能问答 - 基于 YangZhe (YZ) 完整信息知识库的智能助手">
+<title>AI 问答 · YangZhe</title>
+<style>html.js-loading{visibility:hidden}html.js-ready{visibility:visible}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=JetBrains+Mono:wght@400..700&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/chat.css">
+</head>
+<body>
+
+<canvas class="particles-canvas"></canvas>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <span class="nav__logo-dot"></span>
+      YZ
+    </a>
+    <button class="nav__toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links">
+      <li><a href="index.html" class="nav__link">首页</a></li>
+      <li><a href="projects.html" class="nav__link">核心项目</a></li>
+      <li><a href="games.html" class="nav__link">休闲小游戏</a></li>
+      <li><a href="chat.html" class="nav__link nav__link--active">AI 问答</a></li>
+      <li><a href="about.html" class="nav__link">关于我</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<section class="page-header">
+  <div class="section__inner reveal">
+    <span class="section__label">智能助手</span>
+    <h1>AI <span class="text-gradient">智能问答</span></h1>
+    <p class="section__subtitle" style="margin-inline:auto;">基于 YangZhe (YZ) 的完整信息知识库，随时回答你的问题</p>
+  </div>
+</section>
+
+<!-- Chat Interface -->
+<section class="section chat-section" style="padding-top:1rem;">
+  <div class="section__inner">
+    <div class="chat-container reveal">
+      <div class="chat-messages" id="chat-messages">
+        <div class="chat-message chat-message--bot">
+          <div class="chat-avatar">🤖</div>
+          <div class="chat-bubble">
+            <p>你好！我是 YangZhe (YZ) 的 AI 助手，很高兴为你解答！</p>
+            <p>你可以问我关于 YangZhe 的任何问题，比如：</p>
+            <div class="chat-suggestions" id="chat-suggestions">
+              <button class="chat-suggestion">你是哪个学校的？读什么专业？</button>
+              <button class="chat-suggestion">你的技术栈有哪些？</button>
+              <button class="chat-suggestion">介绍一下你的核心项目</button>
+              <button class="chat-suggestion">你获得了哪些竞赛奖项？</button>
+              <button class="chat-suggestion">你有什么体育爱好？</button>
+              <button class="chat-suggestion">你的好朋友们是谁？</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="chat-input-area">
+        <div class="chat-input-row">
+          <input type="text" class="chat-input" id="chat-input" placeholder="输入你的问题..." autocomplete="off">
+          <button class="chat-send-btn" id="chat-send" aria-label="发送">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </div>
+        <p class="chat-disclaimer">此 AI 基于本地知识库回答，信息来自个人博客公开内容</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <p class="footer__text">以代码践行热爱，以开源传递成长 — YangZhe (YZ)</p>
+    <div class="footer__links">
+      <a href="index.html" class="footer__link">首页</a>
+      <a href="projects.html" class="footer__link">核心项目</a>
+      <a href="games.html" class="footer__link">小游戏</a>
+      <a href="chat.html" class="footer__link">AI 问答</a>
+      <a href="about.html" class="footer__link">关于我</a>
+    </div>
+    <p class="footer__text" style="margin-top:1rem;font-size:0.78rem;">© 2026 YangZhe (YZ) · <a href="https://github.com/ANEMONE-ops" target="_blank">github.com/ANEMONE-ops</a></p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/chat.js"></script>
+</body>
+</html>

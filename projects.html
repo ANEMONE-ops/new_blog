@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="js-loading">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="YangZhe 核心项目 - 星鉴岗谱、血细胞辅诊平台、河流漂浮物检测、开源仓库">
+<title>核心项目 · YangZhe</title>
+<style>html.js-loading{visibility:hidden}html.js-ready{visibility:visible}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=JetBrains+Mono:wght@400..700&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/projects.css">
+</head>
+<body>
+
+<canvas class="particles-canvas"></canvas>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <span class="nav__logo-dot"></span>
+      YZ
+    </a>
+    <button class="nav__toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links">
+      <li><a href="index.html" class="nav__link">首页</a></li>
+      <li><a href="projects.html" class="nav__link nav__link--active">核心项目</a></li>
+      <li><a href="games.html" class="nav__link">休闲小游戏</a></li>
+      <li><a href="chat.html" class="nav__link">AI 问答</a></li>
+      <li><a href="about.html" class="nav__link">关于我</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-header">
+  <div class="section__inner reveal">
+    <span class="section__label">Core Projects</span>
+    <h1>核心项目 <span class="text-gradient">仓库</span></h1>
+    <p class="section__subtitle" style="margin-inline:auto;">三大落地项目 + GitHub 开源仓库</p>
+  </div>
+</section>
+
+<!-- Project 1: Recruitment System -->
+<section class="section project-detail" id="recruit">
+  <div class="section__inner">
+    <div class="project-detail__grid reveal">
+      <div class="project-detail__visual">
+        <img src="images/brain.jpg" alt="RAG+Knowledge Graph" style="width:100%;border-radius:var(--radius-lg);border:1px solid var(--border-subtle);">
+      </div>
+      <div class="project-detail__info">
+        <span class="tag tag--teal" style="margin-bottom:0.5rem;">RAG · 大模型应用</span>
+        <h2>星鉴岗谱</h2>
+        <p class="project-detail__subtitle">基于 RAG + 知识图谱的招聘数据可信评分系统</p>
+        <p class="project-detail__desc">
+          面向求职招聘领域搭建的垂直大模型应用系统，通过知识图谱梳理企业、岗位、求职者多维关联关系，结合 RAG 检索增强生成技术完成简历可信度、岗位匹配度智能评分，解决行业内简历信息失真、岗位匹配低效的痛点。
+        </p>
+        <div class="project-detail__features">
+          <div class="project-detail__feature">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            RAG 检索增强生成 · 简历可信度智能评分
+          </div>
+          <div class="project-detail__feature">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            知识图谱多维关联 · 企业-岗位-求职者关系网络
+          </div>
+          <div class="project-detail__feature">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            垂直领域大模型微调与落地部署
+          </div>
+        </div>
+        <div class="project-detail__tags">
+          <span class="tag tag--teal">RAG</span>
+          <span class="tag tag--violet">知识图谱</span>
+          <span class="tag tag--gold">大模型</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Project 2: Blood Cell Diagnosis -->
+<section class="section project-detail project-detail--alt" id="blood">
+  <div class="section__inner">
+    <div class="project-detail__grid project-detail__grid--reverse reveal">
+      <div class="project-detail__visual">
+        <img src="images/lab.jpg" alt="Blood Cell AI" style="width:100%;border-radius:var(--radius-lg);border:1px solid var(--border-subtle);">
+      </div>
+      <div class="project-detail__info">
+        <span class="tag tag--gold" style="margin-bottom:0.5rem;">医疗 AI · 全栈落地</span>
+        <h2>外周血细胞智能分类血液病辅诊一体化平台</h2>
+        <p class="project-detail__desc">
+          面向医疗辅助诊断场景的全栈落地项目，融合智能显微镜图像采集算法、实时数据可视化大屏、微信小程序移动端交互、自主研发 AI 智能体四大模块。实现血细胞自动识别、分类计数、初步血液病筛查，为基层医疗机构提供轻量化智能辅助诊断方案。
+        </p>
+        <div class="project-detail__features">
+          <div class="project-detail__feature">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            智能显微镜图像采集 + AI 细胞识别
+          </div>
+          <div class="project-detail__feature">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            实时数据可视化大屏 + 微信小程序
+          </div>
+          <div class="project-detail__feature">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            血细胞自动分类计数 · 初步血液病筛查
+          </div>
+        </div>
+        <div class="project-detail__tags">
+          <span class="tag tag--gold">OpenCV</span>
+          <span class="tag tag--rose">医疗 AI</span>
+          <span class="tag tag--violet">全栈</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Project 3: River Detection -->
+<section class="section project-detail" id="river">
+  <div class="section__inner">
+    <div class="project-detail__grid reveal">
+      <div class="project-detail__visual">
+        <img src="images/river.jpg" alt="River Detection" style="width:100%;border-radius:var(--radius-lg);border:1px solid var(--border-subtle);">
+      </div>
+      <div class="project-detail__info">
+        <span class="tag tag--violet" style="margin-bottom:0.5rem;">CV · 环境治理</span>
+        <h2>河流漂浮物智能检测系统</h2>
+        <p class="project-detail__desc">
+          聚焦水域环境治理赛道，基于计算机视觉目标检测算法实现河道漂浮垃圾实时识别、区域污染量化统计、污染点位可视化标记。可对接河道监控设备自动完成水域环境监测，助力水环境数字化治理。
+        </p>
+        <div class="project-detail__features">
+          <div class="project-detail__feature">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            CV 目标检测 · 漂浮物实时识别
+          </div>
+          <div class="project-detail__feature">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            区域污染量化统计 · 可视化点位标记
+          </div>
+          <div class="project-detail__feature">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            对接河道监控设备 · 自动化水环境监测
+          </div>
+        </div>
+        <div class="project-detail__tags">
+          <span class="tag tag--violet">CV</span>
+          <span class="tag tag--emerald">环境治理</span>
+          <span class="tag tag--teal">目标检测</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GitHub Repos -->
+<section class="section github-section" id="github">
+  <div class="section__inner">
+    <div class="reveal" style="text-align:center;margin-bottom:2rem;">
+      <span class="section__label">GitHub · ANEMONE-ops</span>
+      <h2>开源仓库 <span class="text-gradient">完整归档</span></h2>
+      <p class="section__subtitle" style="margin-inline:auto;">点击任意卡片跳转到 GitHub 仓库</p>
+    </div>
+    <div class="other-projects reveal">
+      <a href="https://github.com/ANEMONE-ops" target="_blank" class="other-projects__card" style="text-decoration:none;color:inherit;">
+        <div class="other-projects__icon">📂</div>
+        <h3>大学课程代码完整归档</h3>
+        <p>硬件实验、算法实验、课程项目代码，完整存档，持续更新</p>
+        <span class="tag tag--teal">课程</span>
+      </a>
+      <a href="https://github.com/ANEMONE-ops" target="_blank" class="other-projects__card" style="text-decoration:none;color:inherit;">
+        <div class="other-projects__icon">🏆</div>
+        <h3>历届国赛完整开源项目</h3>
+        <p>iCan、互联网+、挑战杯、三创赛全部参赛项目代码开源</p>
+        <span class="tag tag--gold">竞赛</span>
+      </a>
+      <a href="https://github.com/ANEMONE-ops" target="_blank" class="other-projects__card" style="text-decoration:none;color:inherit;">
+        <div class="other-projects__icon">🤖</div>
+        <h3>AI 算法可运行 Demo</h3>
+        <p>各类 AI 算法可运行 Demo、数据可视化大屏整套源码</p>
+        <span class="tag tag--violet">AI Demo</span>
+      </a>
+      <a href="https://github.com/ANEMONE-ops" target="_blank" class="other-projects__card" style="text-decoration:none;color:inherit;">
+        <div class="other-projects__icon">🛠</div>
+        <h3>算法可视化 + 小游戏</h3>
+        <p>algorithm_visualization、little_game、blog 等趣味项目</p>
+        <span class="tag tag--rose">开源</span>
+      </a>
+    </div>
+    <div class="reveal" style="text-align:center;margin-top:2rem;">
+      <a href="https://github.com/ANEMONE-ops" target="_blank" class="btn btn--primary">🐙 访问 GitHub 仓库</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <p class="footer__text">以代码践行热爱，以开源传递成长 — YangZhe (YZ)</p>
+    <div class="footer__links">
+      <a href="index.html" class="footer__link">首页</a>
+      <a href="projects.html" class="footer__link">核心项目</a>
+      <a href="games.html" class="footer__link">小游戏</a>
+      <a href="chat.html" class="footer__link">AI 问答</a>
+      <a href="about.html" class="footer__link">关于我</a>
+    </div>
+    <p class="footer__text" style="margin-top:1rem;font-size:0.78rem;">© 2026 YangZhe (YZ) · <a href="https://github.com/ANEMONE-ops" target="_blank">github.com/ANEMONE-ops</a></p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
